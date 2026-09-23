@@ -76,10 +76,13 @@ int main()
 Desde la raíz del proyecto:
 
 ```bash
-cd ~/Documentos/Proyecto
+cd ~/HPX_Project
+rm -rf build
 mkdir build
 cd build
 ```
+
+> Si `build` ya existe de un intento anterior, es recomendable borrarlo antes para evitar que CMake use una caché vieja creada desde otra ruta.
 
 ---
 
@@ -123,7 +126,8 @@ Hello World!
 ## Comandos completos en orden
 
 ```bash
-cd ~/Documentos/Proyecto
+cd ~/HPX_Project
+rm -rf build
 mkdir build
 cd build
 cmake -DHPX_DIR=/usr/lib64/cmake/HPX ..

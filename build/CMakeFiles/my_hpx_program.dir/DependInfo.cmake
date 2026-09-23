@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jaider/Documentos/Proyecto/src/main.cpp" "CMakeFiles/my_hpx_program.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_hpx_program.dir/src/main.cpp.o.d"
+  "/home/jaider/HPX_Project/src/main.cpp" "CMakeFiles/my_hpx_program.dir/src/main.cpp.o" "gcc" "CMakeFiles/my_hpx_program.dir/src/main.cpp.o.d"
   "" "my_hpx_program" "gcc" "CMakeFiles/my_hpx_program.dir/link.d"
   )
 

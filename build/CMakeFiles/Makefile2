@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jaider/Documentos/Proyecto
+CMAKE_SOURCE_DIR = /home/jaider/HPX_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jaider/Documentos/Proyecto/build
+CMAKE_BINARY_DIR = /home/jaider/HPX_Project/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/my_hpx_program.dir/clean
 CMakeFiles/my_hpx_program.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_hpx_program.dir/build.make CMakeFiles/my_hpx_program.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_hpx_program.dir/build.make CMakeFiles/my_hpx_program.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jaider/Documentos/Proyecto/build/CMakeFiles --progress-num=1,2 "Built target my_hpx_program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jaider/HPX_Project/build/CMakeFiles --progress-num=1,2 "Built target my_hpx_program"
 .PHONY : CMakeFiles/my_hpx_program.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/my_hpx_program.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaider/Documentos/Proyecto/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaider/HPX_Project/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/my_hpx_program.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaider/Documentos/Proyecto/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jaider/HPX_Project/build/CMakeFiles 0
 .PHONY : CMakeFiles/my_hpx_program.dir/rule
 
 # Convenience name for target.
@@ -102,7 +102,7 @@ my_hpx_program: CMakeFiles/my_hpx_program.dir/rule
 # codegen rule for target.
 CMakeFiles/my_hpx_program.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_hpx_program.dir/build.make CMakeFiles/my_hpx_program.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jaider/Documentos/Proyecto/build/CMakeFiles --progress-num=1,2 "Finished codegen for target my_hpx_program"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/jaider/HPX_Project/build/CMakeFiles --progress-num=1,2 "Finished codegen for target my_hpx_program"
 .PHONY : CMakeFiles/my_hpx_program.dir/codegen
 
 # clean rule for target.

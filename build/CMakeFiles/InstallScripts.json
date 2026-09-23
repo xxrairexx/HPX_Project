@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/jaider/Documentos/Proyecto/build/cmake_install.cmake"
+		"/home/jaider/HPX_Project/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
