@@ -34,12 +34,13 @@ En este entorno, la ruta correcta fue:
 
 En la raíz del proyecto crea un archivo llamado `CMakeLists.txt` con este contenido el cual se va en la documentación como:
 
-
+```cmake
 cmake_minimum_required(VERSION 3.19)
 project(my_hpx_project CXX)
 find_package(HPX REQUIRED)
 add_executable(my_hpx_program main.cpp)
 target_link_libraries(my_hpx_program HPX::hpx HPX::wrap_main HPX::iostreams_component)
+```
 
 Se cambiaron los parametros a los siguintes para cumplir el requsito de c++ 17:
 
