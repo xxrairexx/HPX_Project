@@ -57,84 +57,59 @@ add_executable(my_hpx_program src/main.cpp)
 target_link_libraries(my_hpx_program HPX::hpx HPX::wrap_main HPX::iostreams_component)
 ```
 
-Y en `src/main.cpp` puedes usar este ejemplo básico:
-
-```cpp
-#include <hpx/hpx_main.hpp>
-#include <hpx/iostream.hpp>
-
-int main()
-{
-    hpx::cout << "Hello World!\n" << std::flush;
-    return 0;
-}
-```
+El programa de [src/main.cpp](src/main.cpp) crea ocho tareas HPX. Cada tarea
+realiza un trabajo de CPU durante unos 100 ms e informa qué trabajador la
+ejecutó. Al final muestra el tiempo de pared total.
 
 ---
 
-## 3) Crear la carpeta build
+## 3) Configurar con CMake
 
-Desde la raíz del proyecto:
-
-```bash
-cd ~/HPX_Project
-rm -rf build
-mkdir build
-cd build
-```
-
-> Si `build` ya existe de un intento anterior, es recomendable borrarlo antes para evitar que CMake use una caché vieja creada desde otra ruta.
-
----
-
-## 4) Configurar con CMake
-
-Usa la ruta de instalación de HPX en tu sistema:
+Desde la raíz del proyecto, configura el directorio de compilación:
 
 ```bash
-cmake -DHPX_DIR=/usr/lib64/cmake/HPX ..
+cmake -S . -B build -DHPX_DIR=/usr/lib64/cmake/HPX
 ```
 
 Si tu instalación está en otra carpeta, cambia la ruta por la que corresponda en tu equipo, por ejemplo:
 
 ```bash
-cmake -DHPX_DIR=/path/to/hpx/installation ..
+cmake -S . -B build -DHPX_DIR=/path/to/hpx/installation
 ```
 ---
 
-## 5) Compilar el proyecto
+## 4) Compilar el proyecto
 
 ```bash
-cmake --build .
+cmake --build build
 ```
 
 ---
 
-## 6) Ejecutar el programa
+## 5) Ejecutar con uno o varios trabajadores
 
-```bash
-./my_hpx_program
+Desde la raíz del proyecto, ejecuta con un solo trabajador:
+
+```sh
+./build/my_hpx_program --hpx:threads=1
 ```
 
-Si todo salió bien, deberías ver una salida similar a:
+Ejecuta con cuatro trabajadores:
 
-```text
-Hello World!
+```sh
+./build/my_hpx_program --hpx:threads=4
 ```
 
----
+Para usar todos los trabajadores disponibles:
 
-## Comandos completos en orden
-
-```bash
-cd ~/HPX_Project
-rm -rf build
-mkdir build
-cd build
-cmake -DHPX_DIR=/usr/lib64/cmake/HPX ..
-cmake --build .
-./my_hpx_program
+```sh
+./build/my_hpx_program --hpx:threads=all
 ```
 
----
-
+La salida indica cuántos trabajadores se habilitaron, qué trabajador ejecutó
+cada tarea, las iteraciones realizadas y cuánto tardaron las ocho tareas.
+Como cada tarea ocupa la CPU unos 100 ms, con un trabajador el tiempo será
+aproximadamente 800 ms; con varios trabajadores, el trabajo puede ejecutarse
+en paralelo y el tiempo normalmente disminuye. Los trabajadores de HPX son
+hilos de ejecución; el sistema operativo decide en qué núcleos físicos se
+ejecutan. El tiempo puede variar según la carga y el hardware.
